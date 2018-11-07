@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>考试登录系统</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="bk">
+	    <h1 class="huanyin">Welcome to</h1>
+		<p class="p_jie">use automatic test generation system</p>
+		<p class="xuexiao">ChengDu Neusoft University </p>
+	</div>
+    <div class="login">
+        <form id="form">
+            <h1>LOGIN</h1>
+            <p>Login with your account</p>
+			<div class="form_input">
+			    <label>
+					<i class="i-user"></i>
+                    <input type="text" name="username" placeholder="User name">
+                </label>
+			</div>
+            <div class="form_input">
+			    <label>
+					<i class="i-password"></i>
+                <input type="password" name="password" placeholder="Password">
+            </label>
+			</div>
+            <div class="checkbox">
+                <input type="checkbox">Remember Me
+                <a href="#">Forget password ?</a>
+            </div>
+            <div class="btn-lg">login</div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
