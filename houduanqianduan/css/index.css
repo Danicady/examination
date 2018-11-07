@@ -1,0 +1,141 @@
+/* CSS Document */
+body{
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+	position: relative;
+	background: #f3f5f7;
+}
+
+header{
+	width: 100%;
+	height: 8.5%;
+	position: relative;
+	border-bottom: 1px solid #393939;
+	background: #fff;
+}
+.logo_text{
+	margin: 0px 0.5%;
+	width:250px; 
+}
+.logo_text h1{
+	font-family: BodoniMT;
+	font-size: 34px;
+	font-weight: normal;
+	font-style: italic;
+	font-stretch: normal;
+	letter-spacing: -3px;
+	color: #363232;
+	text-align: center;
+	float: left;
+	position: relative;
+	top: -7px;
+}
+header>p{
+	position: relative;
+	float: left;
+	top: 36%;
+	left: 14%;
+	font-family: YouYuan;
+	font-size: 20px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #363232;
+}
+.user_text{
+	position: absolute;
+	top: 0px;
+	right: 0%;
+	width: 33.33%;
+}
+.user_text h3{
+	float: left;
+	font-family: STXingkai;
+	font-size: 25px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -2px;
+	color: #363232;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+.user_text a{
+	float: left;
+	text-decoration: none;
+	color:#484444;
+	font-family: STXingkai;
+	font-size: 25px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -2px;
+	position:absolute;
+	right: 170px;
+	bottom: 18px;
+}
+.user_text a:after{
+	content: '';
+	height: 44px;
+	width: 1px;
+	background: #e7e1e1;
+	position: absolute;
+	left: 88px;
+	top: -16px;
+}
+.user_image{
+	float: left;
+	position: absolute;
+	right: 5%;
+	bottom: 5px;
+	
+}
+/*第二部分*/
+#panul{
+	position: relative;
+	width: 20%;
+	height: 90%;
+	background:#32323d; 
+	padding-top: 10px;
+}
+.tabs{
+	color: #fff;
+	font-family: KaiTi;
+	font-size: 25px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -2px;
+	width: 100%;
+}
+.tab_menu{
+	position: relative;
+	top: 100px;
+	left: 0.75em;
+	width: 201px;
+	margin: 0 auto;
+}
+.tab_menu ul{
+	margin: 0px;
+}
+.tab_menu ul li{
+	float: left;
+	list-style: none;
+	margin: 17.5% 0%;
+}
+.tab_menu ul li a{
+	text-decoration: none;
+	border-bottom: 1px solid #C5B0B0;
+	text-align: center;
+	padding-bottom: 5px;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+}
+.tab_menu ul li a:hover,.tab_menu ul li a:focus,.tab_menu ul li a.active{
+	color: #4251C0;
+	border-bottom: 1px solid #fff;
+}
+/*第三部分*/
+.tab_contents{
+	position: relative;
+	top: 5%;
+}
