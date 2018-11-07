@@ -19,6 +19,7 @@ if($_POST){
             $data[$i]['userID']=$row['userID'];
             $data[$i]['name']=$row['name'];
             $data[$i]['department']=$row['department'];
+            $data[$i]['token']=$row['token'];
             $i++;
         }
         echo json_encode($data);
