@@ -11,7 +11,7 @@ if($_POST){
     $password=$_POST['password'];
     $token=md5($username);
     $con=db_con();
-    if ( mysqli_query($con,"update user set token=$token where userID='{$username}'and password='{$password}'")){
+    if ( mysqli_query($con,"update user set token='{$token}' where userID='{$username}'and password='{$password}'")){
         $data=[];
         $i=0;
         $res=mysqli_query($con,"select * from user where superior='{$username}'");
@@ -19,10 +19,13 @@ if($_POST){
             $data[$i]['userID']=$row['userID'];
             $data[$i]['name']=$row['name'];
             $data[$i]['department']=$row['department'];
-            $data[$i]['token']=$row['token'];
             $i++;
         }
-        echo json_encode($data);
+        $user=[];
+        $res=mysqli_query($con,"select name,department from user where token='{$token}'");
+        $user[0]=mysqli_fetch_assoc($res);
+        $user[0]['token']=$token;
+        echo json_encode(array('user'=>$user,'teacher'=>$data));
     }
     else{
         header('HTTP/1.1 401');
