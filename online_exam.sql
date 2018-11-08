@@ -6,7 +6,7 @@ create table user(
 userID int(15) primary key,
 name varchar(20),
 password varchar(20),
-department enum('信息与软件工程系','计算机科学与工程系','商务管理系','数字艺术系','信息管理系','应用外语系'),
+department enum('信息与软件工程系','计算机科学与工程系','商务管理系','数字艺术系','信息管理系','应用外语系','基础教学部','思想政治理论课教学部'),
 role enum('admin','user'),
 superior int(15),
 token varchar(50)
