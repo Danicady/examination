@@ -11,7 +11,6 @@ header{
 	width: 100%;
 	height: 8.5%;
 	position: relative;
-	border-bottom: 1px solid #393939;
 	background: #fff;
 }
 .logo_text{
@@ -19,24 +18,23 @@ header{
 	width:250px; 
 }
 .logo_text h1{
-	font-family: BodoniMT;
+	font-family: STXingkai;
 	font-size: 34px;
 	font-weight: normal;
-	font-style: italic;
 	font-stretch: normal;
-	letter-spacing: -3px;
-	color: #363232;
-	text-align: center;
-	float: left;
+	letter-spacing: 0px;
+	color: #292626;
 	position: relative;
-	top: -7px;
+	display: inline;
+	line-height: 94px;
+	margin-left: 1em;
 }
 header>p{
-	position: relative;
+	position: absolute;
 	float: left;
-	top: 36%;
-	left: 14%;
-	font-family: YouYuan;
+	top: 32%;
+	left: 21%;
+	font-family: KaiTi;
 	font-size: 20px;
 	font-weight: normal;
 	font-stretch: normal;
@@ -45,13 +43,13 @@ header>p{
 }
 .user_text{
 	position: absolute;
-	top: 0px;
+	bottom: 0px;
 	right: 0%;
 	width: 33.33%;
 }
 .user_text h3{
 	float: left;
-	font-family: STXingkai;
+	font-family: KaiTi;
 	font-size: 25px;
 	font-weight: normal;
 	font-stretch: normal;
@@ -65,7 +63,7 @@ header>p{
 	float: left;
 	text-decoration: none;
 	color:#484444;
-	font-family: STXingkai;
+	font-family:KaiTi;
 	font-size: 25px;
 	font-weight: normal;
 	font-stretch: normal;
@@ -93,10 +91,8 @@ header>p{
 /*第二部分*/
 #panul{
 	position: relative;
-	width: 20%;
+	width: 90%;
 	height: 90%;
-	background:#32323d; 
-	padding-top: 10px;
 }
 .tabs{
 	color: #fff;
@@ -105,7 +101,10 @@ header>p{
 	font-weight: normal;
 	font-stretch: normal;
 	letter-spacing: -2px;
-	width: 100%;
+	width: 20%;
+	background:#2c2c2f; 
+	height: 100%;
+	padding-top: 10px;
 }
 .tab_menu{
 	position: relative;
@@ -129,13 +128,222 @@ header>p{
 	padding-bottom: 5px;
 	cursor: pointer;
 	transition: all 0.4s ease-in-out;
+	color: #FFFFFF;
 }
-.tab_menu ul li a:hover,.tab_menu ul li a:focus,.tab_menu ul li a.active{
+.tab_menu ul li a:hover,.tab_menu ul li a:focus,.tab_menu ul li.active a{
 	color: #4251C0;
-	border-bottom: 1px solid #fff;
 }
 /*第三部分*/
 .tab_contents{
-	position: relative;
+	position: absolute;
 	top: 5%;
+	left: 23%;
+	width:80%;
+	height: 85%;
+	background: #fff;
+}
+
+.tab_contents li{
+	position: absolute;
+	width: 100%;
+	height: 80%;
+	list-style: none;
+	opacity: 0;
+}
+.tab_contents li:first-child{
+	opacity: 1;
+}
+.tab_contents ul li.active{
+	z-index: 100;
+}
+.teacher_ul_li{
+	width: 100%;
+	height: 90%;
+}
+
+.teacher_ul_li h2{
+	font-family: KaiTi;
+	font-size: 28px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -2px;
+	color: #494242;
+}
+.teacher_ul_li table{
+	width: 90%;
+	font-family: KaiTi;
+	font-size: 18px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -2px;
+	color: #494242;
+}
+.teacher_ul_li tr{
+	height: 45px;
+}
+.teacher_ul_li th:nth-child(1){
+	width: 20%;
+	letter-spacing: 2px;
+}
+.teacher_ul_li th:nth-child(2){
+	width: 20%;
+}
+.teacher_ul_li th:nth-child(3){
+	width: 40%;
+}
+.teacher_ul_li td,th{
+	text-align: center;
+	padding: 0;
+	border: none;
+}
+.teacher_ul_li tr:nth-child(even){
+	background: #f3f5f7;
+}
+.teacher_ul_li tr:nth-child(odd){
+	background: #ffffff;
+}
+.teacher_ul_li a{
+	text-decoration: none;
+	font-family: KaiTi;
+	font-size: 18px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -2px;
+	color: #494242;
+	transition: all 0.4s ease-in-out;
+	cursor: pointer;
+}
+.teacher_ul_li a:hover,.teacher_ul_li a:focus{
+	color:#EA0003;
+}
+
+.erji_user{
+	width: 90%;
+	height: 80%;
+	position: absolute;
+	background: #ffffff;
+	top: 0px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px #efefef;
+	color: #494242;
+	opacity: 0;
+	z-index: -1;
+}
+.erji_user .leave{
+	width: 30px;
+	height: 30px;
+	background: url(../image/icon-.svg) no-repeat;
+	background-size: cover;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+.form{
+	position: relative;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	width: 90%;
+	height: 90%;
+}
+.form_top4{
+	width: 45%;
+	height: 15%;
+	float: left;
+	margin-bottom: 2.5%;
+}
+.form_top4 input{
+	border: none;
+	text-decoration: none;
+	border-bottom: 1px solid #877373;
+	outline: none;
+}
+.form_top4 select{
+	width: 70%;
+	height: 40px;
+}
+.form select option{
+	margin:0; 
+	float:left;
+    height: 26px;
+    padding: 10px 0;/*当时解决输入框光标顶满input框的问题是这么解决的 如果设置了行高就会顶满没有行高的话光标高度=文字的font-size */
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    color:#6d6d6d;
+    -webkit-appearance:none; /*去除系统默认的样式*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   /* 点击去除高亮的颜色*/
+    background-color: #fff;/*当input框禁止输入的时候会有一个灰色的底色 项目需要我设置了 白色底 跟页面背景一个颜色。*/
+}
+.kecheng{
+	position: absolute;
+	width: 80%;
+	height: 60%;
+	bottom: 0px;
+	overflow: hidden;
+}
+.kecheng select{
+	width: 25%;
+	height: 40px;
+	margin-right: 20px;
+}
+.kecheng div{
+	margin-top: 25px;
+}
+.btn-lg{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	bottom: 0px;
+	right: 2.5%;
+	border: 0.5px solid #988787;
+	border-radius: 4px;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	box-shadow: 0px 0px 4px #efefef;
+	color: #996DCD;
+	transition: all 0.4s ease-in;
+	cursor: pointer;
+}
+.btn-lg:hover, .btn-lg:focus{
+	color: #20DF57;
+	border: 0.5px solid #6D57D2;
+}
+/*新增教师部分*/
+.xiaozhengjiaoshi{
+	width: 90%;
+	height: 80%;
+	position: absolute;
+	background: #ffffff;
+	top: 0px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px #efefef;
+	color: #494242;
+}
+.add_class{
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	border: 0.5px solid #988787;
+	top: 28px;
+	right: 0px;
+	border-radius: 4px;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	box-shadow: 0px 0px 4px #efefef;
+	color: #996DCD;
+	transition: all 0.4s ease-in;
+	cursor: pointer;
+}
+.tiku{
+	color: #000;
+}
+.tiku h1{
+	font-family: KaiTi;
+    font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: -2px;
+    color: #494242;
 }

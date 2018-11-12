@@ -10,7 +10,7 @@
 		
 		// 设置选项
 		options = $.extend({
-			start_index: 1,
+			start_index: 0,
 			random: false,
 			transitions_time: 400
 		}, options);

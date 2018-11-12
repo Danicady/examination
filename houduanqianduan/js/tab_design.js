@@ -3,7 +3,7 @@
 jQuery(function($) {
 
 	$('#tab_design').tabs({
-		start_index: 2,
+		start_index: 0,
 		random: true,
 		transition_time: 200
 	});

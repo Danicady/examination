@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主页</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/base.js"></script>
+	<script src="js/jquery.tabs.js"></script>
+	<script src="js/tab_design.js"></script>
+	<script src="js/modernizr.min.js"></script>
+	<script src="js/admin.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<header>
+	    <div class="logo_text">
+		    <h1>试卷生成系统</h1>
+		</div>
+		<p>欢迎使用</p>
+		<div class="user_text">
+		    <h3><span class="user_xi">某某系</span>管理员</h3>
+			<a href="#" id="logout">[注销]</a>
+			<div class="user_image">
+			   <img src="image/icon27.svg" alt="" width="56px" height="56px" />
+			</div>
+		</div>
+	</header>
+	<div id="panul">
+		<div id="tab_design" class="tabs">
+		 <nav class="tab_menu">
+		  <ul>
+		  	  <li><a href="#jiaoshiguanli">教师管理</a></li>
+		  	  <li><a href="#xianzengjiaoshi">新增教师</a></li>
+		  	  <li><a href="#tikushangchuan">题库上传</a></li>
+		  	  <li><a href="#qitagongneng">其他功能</a></li>
+		  </ul>
+		</nav>
+		<div class="tab_contents">
+			<ul>
+				<li id="jiaoshiguanli">
+			      <div class="teacher_ul_li">
+					   <h2>用户列表</h2>
+					   <table rules="rows">
+					     <tbody>
+					       <tr>
+					         <th>工号</th>
+					         <th>姓名</th>
+					         <th>系别</th>
+				           </tr>
+					       <tr>
+					         <td>16310320317</td>
+					         <td>滕环</td>
+					         <td>软件工程与信息管理</td>
+							 <td><a href="#" class="xiugai">修改</a></td>
+							 <td><a href="#" class="remove">删除</a></td>
+				           </tr>
+							 <tr>
+					         <td>16310320317</td>
+					         <td>滕环</td>
+					         <td>软件工程与信息管理</td>
+							 <td><a href="#" class="xiugai">修改</a></td>
+							 <td><a href="#" class="remove">删除</a></td>
+				           </tr>
+				         </tbody>
+			        </table>
+					</div>
+					<div class="erji_user">
+					   <form class="form">
+						   <div class="form_top4">
+						   <label>姓名：
+						        <input type="text" class="input" name="name" required>
+						   </label>
+						   </div>
+						   <div class="form_top4">
+						   <label>工号：
+						         <input type="text" class="input" name="gonghao" required>
+						   </label>
+						   </div>
+						   <div class="form_top4">
+						   <label>专业：
+						         <select name="zhuanye" class="input" required>
+                                     <option value="">未选择系别</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+						    </label>
+						   </div>
+						   <div class="form_top4">
+						   <label>系别：
+						           <select name="xibie" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="信息与软件工程系">信息与软件工程系</option>
+                                     <option value="计算机科学与工程系">计算机科学与工程系</option>
+                                     <option value="商务管理系">商务管理系</option>
+                                     <option value="数字艺术系">数字艺术系</option>
+                                     <option value="信息管理系">信息管理系</option>
+									 <option value="应用外语系">应用外语系</option>
+                                 </select>
+						   </label>
+						   </div>
+						   <div class="kecheng">
+						   <label>课程：
+							   <div>
+							        <select name="xibie" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+							   <select name="zhuanye" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+							   <select name="banji" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+							   </div>
+						   </label>
+						   </div>
+						   
+                           <div class="btn-lg">修改信息</div>
+                        </form>
+					   <div class="leave"></div>
+					</div>
+				</li>
+				<li id="xianzengjiaoshi">
+				    <div class="xianzhenjiaoshi">
+					   <div class="xiaozhengjiaoshi">
+					   <form class="form">
+						   <div class="form_top4">
+						   <label>姓名：
+						        <input type="text" class="input" name="name" required>
+						   </label>
+						   </div>
+						   <div class="form_top4">
+						   <label>工号：
+						         <input type="text" class="input" name="gonghao" required>
+						   </label>
+						   </div>
+						   <div class="form_top4">
+						   <label>专业：
+						         <select name="zhuanye" class="input" required>
+                                     <option value="">未选择系别</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+						    </label>
+						   </div>
+						   <div class="form_top4">
+						   <label>系别：
+						           <select name="xibie" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="信息与软件工程系">信息与软件工程系</option>
+                                     <option value="计算机科学与工程系">计算机科学与工程系</option>
+                                     <option value="商务管理系">商务管理系</option>
+                                     <option value="数字艺术系">数字艺术系</option>
+                                     <option value="信息管理系">信息管理系</option>
+									 <option value="应用外语系">应用外语系</option>
+                                 </select>
+						   </label>
+						   </div>
+						   <div class="kecheng">
+						   <label>课程：
+							   <div>
+							        <select name="xibie" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+							   <select name="zhuanye" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+							   <select name="banji" class="input" required>
+                                     <option value="">未选择分类</option>
+                                     <option value="汉堡">汉堡</option>
+                                     <option value="蛋糕">蛋糕</option>
+                                     <option value="披萨">披萨</option>
+                                     <option value="意面">意面</option>
+                                     <option value="牛排">牛排</option>
+                                 </select>
+								   <div class="add_class">增加课程</div>
+							   </div>
+						   </label>
+						   </div>
+						   
+                           <div class="btn-lg">增加信息</div>
+                        </form>
+					</div>
+					</div>
+				</li>
+				<li id="tikushangchuan">
+				    <div class="tiku">
+					    <h1>文件上传</h1>
+						<form>
+						    <input type="file" name="files" placeholder="文件上传"> 
+						</form>
+					</div>
+				</li>
+				<li id="qitagongneng">4</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</div>		
+</body>
+</html>

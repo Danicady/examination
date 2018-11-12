@@ -3,9 +3,13 @@ body{
     padding: 0px;
     height: 100%;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
 #app{
     position: relative;
+	width: 100%;
+	height: 1100px;
+	overflow-y: hidden;
 }
 /*第一部分*/
 .bk{
@@ -66,7 +70,7 @@ body{
 	border: none;
 	text-decoration: none;
 	outline: none;
-	width: 80%;
+	width: 70%;
 }
 #form i{
 	display: block;
