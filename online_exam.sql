@@ -1,61 +1,87 @@
-create database exam;
-use exam;
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: 2018-11-12 02:13:54
+-- æœåŠ¡å™¨ç‰ˆæœ¬ï¼š 5.7.19
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-create table user(
-userID int(15) primary key,
-name varchar(20),
-password varchar(20),
-department enum('ĞÅÏ¢ÓëÈí¼ş¹¤³ÌÏµ','¼ÆËã»ú¿ÆÑ§Óë¹¤³ÌÏµ','ÉÌÎñ¹ÜÀíÏµ','Êı×ÖÒÕÊõÏµ','ĞÅÏ¢¹ÜÀíÏµ','Ó¦ÓÃÍâÓïÏµ','»ù´¡½ÌÑ§²¿','Ë¼ÏëÕşÖÎÀíÂÛ¿Î½ÌÑ§²¿'),
-role enum('admin','user'),
-superior int(15),
-token varchar(50)
-)charset=utf8;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Database: `exam`
+--
+
+-- --------------------------------------------------------
+
+--
+-- è¡¨çš„ç»“æ„ `class`
+--
+
+DROP TABLE IF EXISTS `class`;
+CREATE TABLE IF NOT EXISTS `class` (
+  `classID` int(254) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(20) DEFAULT NULL,
+  `department` enum('ä¿¡æ¯ä¸è½¯ä»¶å·¥ç¨‹ç³»','è®¡ç®—æœºç§‘å­¦ä¸å·¥ç¨‹ç³»','å•†åŠ¡ç®¡ç†ç³»','æ•°å­—è‰ºæœ¯ç³»','ä¿¡æ¯ç®¡ç†ç³»','åº”ç”¨å¤–è¯­ç³»') DEFAULT NULL,
+  `number` int(4) DEFAULT NULL,
+  `tname` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`classID`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- è½¬å­˜è¡¨ä¸­çš„æ•°æ® `class`
+--
+
+INSERT INTO `class` (`classID`, `classname`, `department`, `number`, `tname`) VALUES
+(1, 'è½¯ä»¶å·¥ç¨‹1ç­', 'ä¿¡æ¯ä¸è½¯ä»¶å·¥ç¨‹ç³»', 29, 'éšä¾¿'),
+(2, 'å•†åŠ¡ç®¡ç†1ç­', 'å•†åŠ¡ç®¡ç†ç³»', 30, 'éšä¾¿'),
+(3, 'æ•°è‰º3ç­', 'æ•°å­—è‰ºæœ¯ç³»', 25, 'éšä¾¿');
+
+-- --------------------------------------------------------
+
+--
+-- è¡¨çš„ç»“æ„ `course`
+--
+
+DROP TABLE IF EXISTS `course`;
 CREATE TABLE IF NOT EXISTS `course` (
   `courseID` int(8) NOT NULL,
   `cname` varchar(20) DEFAULT NULL,
   `major` varchar(20) DEFAULT NULL,
-  `nature` enum('Ñ¡ĞŞ¿Î','±ØĞŞ¿Î') DEFAULT NULL,
+  `nature` enum('é€‰ä¿®è¯¾','å¿…ä¿®è¯¾') DEFAULT NULL,
   `credit` int(4) DEFAULT NULL,
-  `department` enum('ĞÅÏ¢ÓëÈí¼ş¹¤³ÌÏµ','¼ÆËã»ú¿ÆÑ§Óë¹¤³ÌÏµ','ÉÌÎñ¹ÜÀíÏµ','Êı×ÖÒÕÊõÏµ','ĞÅÏ¢¹ÜÀíÏµ','Ó¦ÓÃÍâÓïÏµ') DEFAULT NULL,
+  `department` enum('ä¿¡æ¯ä¸è½¯ä»¶å·¥ç¨‹ç³»','è®¡ç®—æœºç§‘å­¦ä¸å·¥ç¨‹ç³»','å•†åŠ¡ç®¡ç†ç³»','æ•°å­—è‰ºæœ¯ç³»','ä¿¡æ¯ç®¡ç†ç³»','åº”ç”¨å¤–è¯­ç³»') DEFAULT NULL,
   `unitnum` int(4) NOT NULL,
   `type` varchar(100) NOT NULL,
   PRIMARY KEY (`courseID`)
-)charset=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- è½¬å­˜è¡¨ä¸­çš„æ•°æ® `course`
+--
 
-CREATE TABLE IF NOT EXISTS `class` (
-  `classID` int(254) NOT NULL AUTO_INCREMENT,
-  `classname` varchar(20) DEFAULT NULL,
-  `department` enum('ĞÅÏ¢ÓëÈí¼ş¹¤³ÌÏµ','¼ÆËã»ú¿ÆÑ§Óë¹¤³ÌÏµ','ÉÌÎñ¹ÜÀíÏµ','Êı×ÖÒÕÊõÏµ','ĞÅÏ¢¹ÜÀíÏµ','Ó¦ÓÃÍâÓïÏµ') DEFAULT NULL,
-  `number` int(4) DEFAULT NULL,
-  `tname` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`classID`)
-)charset=utf8;
+INSERT INTO `course` (`courseID`, `cname`, `major`, `nature`, `credit`, `department`, `unitnum`, `type`) VALUES
+(1, 'è‹±è¯­', 'è½¯ä»¶å·¥ç¨‹', 'å¿…ä¿®è¯¾', 4, 'ä¿¡æ¯ä¸è½¯ä»¶å·¥ç¨‹ç³»', 4, 'å†™ä½œ å¬åŠ› é€‰è¯å¡«ç©º é•¿ç¯‡é˜…è¯» ä»”ç»†é˜…è¯» ç¿»è¯‘'),
+(2, 'é«˜æ•°ä¸€', 'è½¯ä»¶å·¥ç¨‹', 'å¿…ä¿®è¯¾', 4, 'ä¿¡æ¯ä¸è½¯ä»¶å·¥ç¨‹ç³»', 8, 'é€‰æ‹©é¢˜ å¡«ç©ºé¢˜ åº”ç”¨é¢˜'),
+(3, 'æ—¥è¯­', 'å•†åŠ¡è‹±è¯­', 'å¿…ä¿®è¯¾', 4, 'å•†åŠ¡ç®¡ç†ç³»', 4, 'è¯­è¨€çŸ¥è¯† é˜…è¯» å¬åŠ›');
 
-create table relationship(
-id int(15) primary key auto_increment,
-userID int(15),
-courseID int(8),
-classID int(8) 
-)charset=utf8;
+-- --------------------------------------------------------
 
+--
+-- è¡¨çš„ç»“æ„ `paper`
+--
 
-create table subject(
-sid int(15) primary key auto_increment,
-question text,
-userID int(15),
-score int(4),
-type enum('Ñ¡ÔñÌâ','Ìî¿ÕÌâ','ÅĞ¶ÏÌâ','Ó¦ÓÃÌâ','×÷ÎÄ','·­Òë','ÌıÁ¦','³¤ÆªÔÄ¶Á','×ĞÏ¸ÔÄ¶Á','Ñ¡´ÊÌî¿Õ'),
-answer text,
-sdate timestamp,
-unit int(4),
-courseID int(8),
-difficulty enum('ÄÑ','ÖĞ','Ò×')
-)charset=utf8;
-
-
+DROP TABLE IF EXISTS `paper`;
 CREATE TABLE IF NOT EXISTS `paper` (
   `pid` int(15) NOT NULL AUTO_INCREMENT,
   `num` varchar(100) DEFAULT NULL,
@@ -67,15 +93,92 @@ CREATE TABLE IF NOT EXISTS `paper` (
   `semester` varchar(50) DEFAULT NULL,
   `pnature` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`pid`)
-)charset=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-insert into user values (1,'admin','123456',null,'admin',null,md5('1'));
-INSERT INTO `class` (`classID`, `classname`, `department`, `number`, `tname`) VALUES
-(1, 'Èí¼ş¹¤³Ì1°à', 'ĞÅÏ¢ÓëÈí¼ş¹¤³ÌÏµ', 29, 'Ëæ±ã'),
-(2, 'ÉÌÎñ¹ÜÀí1°à', 'ÉÌÎñ¹ÜÀíÏµ', 30, 'Ëæ±ã'),
-(3, 'ÊıÒÕ3°à', 'Êı×ÖÒÕÊõÏµ', 25, 'Ëæ±ã');
+-- --------------------------------------------------------
 
-INSERT INTO `course` (`courseID`, `cname`, `major`, `nature`, `credit`, `department`, `unitnum`, `type`) VALUES
-(1, 'Ó¢Óï', 'Èí¼ş¹¤³Ì', '±ØĞŞ¿Î', 4, 'ĞÅÏ¢ÓëÈí¼ş¹¤³ÌÏµ', 4, 'Ğ´×÷ ÌıÁ¦ Ñ¡´ÊÌî¿Õ ³¤ÆªÔÄ¶Á ×ĞÏ¸ÔÄ¶Á ·­Òë'),
-(2, '¸ßÊıÒ»', 'Èí¼ş¹¤³Ì', '±ØĞŞ¿Î', 4, 'ĞÅÏ¢ÓëÈí¼ş¹¤³ÌÏµ', 8, 'Ñ¡ÔñÌâ Ìî¿ÕÌâ Ó¦ÓÃÌâ'),
-(3, 'ÈÕÓï', 'ÉÌÎñÓ¢Óï', '±ØĞŞ¿Î', 4, 'ÉÌÎñ¹ÜÀíÏµ', 4, 'ÓïÑÔÖªÊ¶ ÔÄ¶Á ÌıÁ¦');
+--
+-- è¡¨çš„ç»“æ„ `relationship`
+--
+
+DROP TABLE IF EXISTS `relationship`;
+CREATE TABLE IF NOT EXISTS `relationship` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `userID` int(15) DEFAULT NULL,
+  `courseID` int(8) DEFAULT NULL,
+  `classID` int(8) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- è½¬å­˜è¡¨ä¸­çš„æ•°æ® `relationship`
+--
+
+INSERT INTO `relationship` (`id`, `userID`, `courseID`, `classID`) VALUES
+(1, 1, 1, 1),
+(2, 1, 1, 2),
+(3, 2, 2, 3),
+(4, 1, 3, 3),
+(5, 1, 3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- è¡¨çš„ç»“æ„ `subject`
+--
+
+DROP TABLE IF EXISTS `subject`;
+CREATE TABLE IF NOT EXISTS `subject` (
+  `sid` int(15) NOT NULL AUTO_INCREMENT,
+  `question` text,
+  `userID` int(15) DEFAULT NULL,
+  `score` int(4) DEFAULT NULL,
+  `type` enum('é˜…è¯»','è¯­è¨€çŸ¥è¯†','é•¿ç¯‡é˜…è¯»','ä»”ç»†é˜…è¯»','å†™ä½œ','é€‰è¯å¡«ç©º','é€‰æ‹©é¢˜','å¡«ç©ºé¢˜','åˆ¤æ–­é¢˜','åº”ç”¨é¢˜','ä½œæ–‡','ç¿»è¯‘','æ®µè½åŒ¹é…') DEFAULT NULL,
+  `answer` text,
+  `sdate` timestamp NULL DEFAULT NULL,
+  `unit` int(4) DEFAULT NULL,
+  `courseID` int(8) DEFAULT NULL,
+  `difficulty` enum('éš¾','ä¸­','æ˜“') DEFAULT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+
+--
+-- è½¬å­˜è¡¨ä¸­çš„æ•°æ® `subject`
+--
+
+INSERT INTO `subject` (`sid`, `question`, `userID`, `score`, `type`, `answer`, `sdate`, `unit`, `courseID`, `difficulty`) VALUES
+(23, 'Stop making so much noise ____ the neighbor will start complaining. \\n Aã€or elseã€‚ Bã€but stillã€‚ Cã€and then ã€‚Dã€so that', 1, 10, 'é€‰æ‹©é¢˜', 'B', '2018-02-17 16:00:00', 1, 1, 'æ˜“'),
+(24, 'è¿‘å¹´æ¥ï¼Œä¸­å›½æœ‰è¶Šæ¥è¶Šå¤šçš„åŸå¸‚å¼€å§‹å»ºè®¾åœ°é“ã€‚å‘å±•åœ°é“æœ‰åŠ©äºå‡å°‘åŸå¸‚çš„äº¤é€šæ‹¥å µå’Œç©ºæ°”æ±¡æŸ“ã€‚åœ°é“å…·æœ‰å®‰å…¨ã€å¿«æ·å’Œèˆ’é€‚çš„ä¼˜ç‚¹ã€‚è¶Šæ¥è¶Šå¤šçš„äººé€‰æ‹©åœ°é“ä½œä¸ºæ¯å¤©ä¸Šç­æˆ–ä¸Šå­¦çš„ä¸»è¦äº¤é€šå·¥å…·ã€‚å¦‚ä»Šï¼Œåœ¨ä¸­å›½ä¹˜ååœ°é“æ­£å˜å¾—è¶Šæ¥è¶Šæ–¹ä¾¿ã€‚åœ¨æœ‰äº›åŸå¸‚é‡Œï¼Œä¹˜å®¢åªéœ€ç”¨å¡æˆ–æ‰‹æœºå°±å¯ä»¥ä¹˜ååœ°é“ã€‚è®¸å¤šå½“åœ°è€å¹´å¸‚æ°‘è¿˜å¯ä»¥å…è´¹ä¹˜ååœ°é“', 2, 10, 'ç¿»è¯‘', 'In recent years, more and more cities in China have begun to build subways. The development of subways can help reduce traffic congestion and air pollution in cities. The subway has the advantages of safety, speed and comfort. More and more people choose the subway as the main means of transportation to work or school every day. Nowadays, it is becoming more and more convenient to take the subway in China. In some cities, passengers can use a card or a mobile phone to take the subway. Many local elderly citizens can also take the subway for free.', '2017-05-11 16:00:00', 1, 1, 'éš¾'),
+(25, 'ã€€Directions: For this part, you are allowed 30 minutes to write a short essay onhow to best handle the relationshop between teachers and students.\r\n\r\nã€€ã€€You should write at least 120 words but no more than 180 words.', 1, 100, 'å†™ä½œ', 'It is a truth universally acknowledged that the relationship between a parent and a child is the most significant ones in a personâ€™s life. Positive parent-child bond is beneficial to family harmony and the growth of children. Therefore, people should learn to balance the relationship between parents and children.\r\n\r\nã€€ã€€There are some conductive suggestions given to both parents and children. First and foremost, it is very important for parents to emphasize the significance of family time spent with their children, like eating meals together on weekends, going to sporting events, movies and the like. Besides, it would be beneficial if parents could pay attention to their children\'s academic performance, friendship and extracurricular activities. Additionally, it is necessary that child should boost their awareness of communicating with their parents, with relaxed and side-by-side conversations.\r\n\r\nã€€ã€€As has been noted, parents and children should make joint efforts to create good relationship between parents and children.', '2018-09-03 16:00:00', 1, 1, 'æ˜“'),
+(26, 'Since the 1940s, southern California has had a reputation for smog. Things are not as bad as they once were but, according to the American Lung Association, Los Angeles is still the worst city in the United States for levels of   26  . Gazing down on the city from the Getty Center, an art museum in the Santa Monica Mountains, one would find the view of the Pacific Ocean blurred by the haze (éœ¾). Nor is the stateâ€™s had air   27  to its south. Fresno, in the central valley, comes top of the list in America for year-round pollution. Residentsâ€™ hearts and lungs are affected as a   28  .\r\n\r\nAll of which, combined with Californiaâ€™s reputation as the home of technological   29  , makes the place ideal for developing and testing systems designed to monitor pollution in   30  . And that is just what Aclima, a new firm in San Francisco, has been doing over the past few months. It has been trying out monitoring that are   31  to yield minute-to-minute maps of   32  air pollution. Such stations will also be able to keep an eye on what is happening inside buildings, including offices.\r\n\r\nTo this end, Aclima has been   33  with Googleâ€™s Street View system. Davida Herzl, Aclimaâ€™s boss, says they have revealed pollution highs on days when San Franciscoâ€™s transit workers went on strike and the cityâ€™s   34  were forced to use their cars. Conversely, â€œcycle to workâ€ days have done their job by   35  pollution lows.\\n\r\n\r\nA:assistedã€‚\r\nB:collaboratingã€‚\r\nC:consequenceã€‚\r\nD:consumersã€‚\r\nE:creatingã€‚\r\nF:detailã€‚\r\nG:domesticã€‚\r\nH:frequentlyã€‚\r\nI:inhabitantsã€‚\r\nJ:innovationã€‚\r\nK:intendedã€‚\r\nL:outdoorã€‚\r\nM:pollutantsã€‚\r\nN:restrictedã€‚\r\nH:Sumã€‚', 1, 65, 'ä»”ç»†é˜…è¯»', '26M pollutants ã€‚\r\n27N restricted ã€‚\r\n28C consequence ã€‚\r\n29J innovation ã€‚\r\n 30F detail ã€‚\r\n31 K intended ã€‚\r\n32 outdoor ã€‚\r\n33 B collaborating ã€‚\r\n\r\n34 I inhabitants ã€‚\r\n\r\n35 E creatingã€‚', '2018-09-03 16:00:00', 1, 1, 'æ˜“');
+
+-- --------------------------------------------------------
+
+--
+-- è¡¨çš„ç»“æ„ `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `userID` int(15) NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `department` enum('ä¿¡æ¯ä¸è½¯ä»¶å·¥ç¨‹ç³»','è®¡ç®—æœºç§‘å­¦ä¸å·¥ç¨‹ç³»','å•†åŠ¡ç®¡ç†ç³»','æ•°å­—è‰ºæœ¯ç³»','ä¿¡æ¯ç®¡ç†ç³»','åº”ç”¨å¤–è¯­ç³»') DEFAULT NULL,
+  `role` enum('admin','user') DEFAULT NULL,
+  `superior` int(15) DEFAULT NULL,
+  `token` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- è½¬å­˜è¡¨ä¸­çš„æ•°æ® `user`
+--
+
+INSERT INTO `user` (`userID`, `name`, `password`, `department`, `role`, `superior`, `token`) VALUES
+(1, 'user', '123456', NULL, 'user', NULL, 'c4ca4238a0b923820dcc509a6f75849b'),
+(2, 'roy', '123456', NULL, 'user', NULL, '');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
