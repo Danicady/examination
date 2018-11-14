@@ -17,8 +17,5 @@ join class on class.classID=r.classID) e join (select department,userID,name,sup
         while ($row=mysqli_fetch_assoc($res))
             $data[]=$row;
         echo json_encode($data);
-    }else{
-        header("HTTP/1.1 401");
-        echo json_encode(array("message"=>"unauthorized token"));
     }
 }

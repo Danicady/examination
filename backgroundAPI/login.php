@@ -14,7 +14,7 @@ if($_POST){
     if ( mysqli_query($con,"update user set token='{$token}' where userID='{$username}' and password='{$password}'")){
         $data=[];
         $i=0;
-        $res=mysqli_query($con,"select * from user where superior='{$username}'");
+        $res=mysqli_query($con,"select userID,name,department from user where superior='{$username}'");
         while($row=mysqli_fetch_assoc($res)){
             $data[$i]['userID']=$row['userID'];
             $data[$i]['name']=$row['name'];
@@ -22,7 +22,7 @@ if($_POST){
             $i++;
         }
         $user=[];
-        $res=mysqli_query($con,"select name,department from user where token='{$token}'");
+        $res=mysqli_query($con,"select userID,name,department from user where token='{$token}'");
         $user[0]=mysqli_fetch_assoc($res);
         $user[0]['token']=$token;
         echo json_encode(array('user'=>$user,'teacher'=>$data));
