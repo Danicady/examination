@@ -11,7 +11,8 @@ if($_POST){
     $password=$_POST['password'];
     $token=md5($username);
     $con=db_con();
-    if ( mysqli_query($con,"update user set token='{$token}' where userID='{$username}' and password='{$password}'")){
+    $userRole=mysqli_fetch_row(mysqli_query($con,"select role from user where userID='{$username}'"));
+    if ( $userRole[0]=="admin" && mysqli_query($con,"update user set token='{$token}' where userID='{$username}' and password='{$password}'")){
         $data=[];
         $i=0;
         $res=mysqli_query($con,"select userID,name,department from user where superior='{$username}'");
