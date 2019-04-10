@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>试卷生成系统-主页</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="container clearfix">
+    <div class="nav clearfix">
+        <h1>试卷生成系统</h1>
+        <div class="number">
+            <p>工号：<span>16310320208</span></p>
+       <p class="btn-lg">[退出]</p>
+        </div>
+    </div>
+    <div class="center_left clearfix">
+        <ul class="first">
+            <!--<li class="first_one"><p>英语 <img src="image/timg_down.png" alt=""></p>-->
+                <!--<ul class="second">-->
+                    <!--<li><p>一单元</p> <input class="num1" type="checkbox"></li>-->
+                    <!--<li><p>二单元</p> <input class="num2" type="checkbox"></li>-->
+                    <!--<li><p>三单元</p> <input class="num3" type="checkbox"></li>-->
+                    <!--<li><p>四单元</p> <input class="num4" type="checkbox"></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li class="first_one"><p>日语 <img src="image/timg_down.png" alt=""></p>-->
+                <!--<ul class="second">-->
+                    <!--<li><p>一单元</p> <input class="num1" type="checkbox"></li>-->
+                    <!--<li><p>二单元</p> <input class="num2" type="checkbox"></li>-->
+                    <!--<li><p>三单元</p> <input class="num3" type="checkbox"></li>-->
+                    <!--<li><p>四单元</p> <input class="num4" type="checkbox"></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li class="first_one"><p>德语 <img src="image/timg_down.png" alt=""></p>-->
+                <!--<ul class="second">-->
+                    <!--<li><p>一单元</p> <input class="num1" type="checkbox"></li>-->
+                    <!--<li><p>二单元</p> <input class="num2" type="checkbox"></li>-->
+                    <!--<li><p>三单元</p> <input class="num3" type="checkbox"></li>-->
+                    <!--<li><p>四单元</p> <input class="num4" type="checkbox"></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li class="first_one"><p>德语 <img src="image/timg_down.png" alt=""></p>-->
+                <!--<ul class="second">-->
+                    <!--<li><p>一单元</p> <input class="num1" type="checkbox"></li>-->
+                    <!--<li><p>二单元</p> <input class="num2" type="checkbox"></li>-->
+                    <!--<li><p>三单元</p> <input class="num3" type="checkbox"></li>-->
+                    <!--<li><p>四单元</p> <input class="num4" type="checkbox"></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        </ul>
+
+
+    </div>
+    <div class="center_right clearfix">
+        <div class="right_top clearfix">
+            <h2>生成试卷</h2>
+            <!--<div class="type1 clearfix">-->
+                <!--<p class="type"><span>听力</span></p>-->
+                <!--<div class="set">-->
+                    <!--<p class="num">数量:<input type="number"></p>-->
+                    <!--<p class="grade">每题分数：<input type="number"></p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="type1 clearfix">-->
+                <!--<p class="type"><span>完型</span></p>-->
+                <!--<div class="set">-->
+                    <!--<p class="num">数量:<input type="number"></p>-->
+                    <!--<p class="grade">每题分数：<input type="number"></p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="type1 clearfix">-->
+                <!--<p class="type"><span>长篇阅读</span></p>-->
+                <!--<div class="set">-->
+                    <!--<p class="num">数量:<input type="number"></p>-->
+                    <!--<p class="grade">每题分数：<input type="number"></p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="type1 clearfix">-->
+                <!--<p class="type"><span>仔细阅读</span></p>-->
+                <!--<div class="set">-->
+                    <!--<p class="num">数量:<input type="number"></p>-->
+                    <!--<p class="grade">每题分数：<input type="number"></p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="type1 clearfix">-->
+                <!--<p class="type"><span>翻译</span></p>-->
+                <!--<div class="set">-->
+                    <!--<p class="num">数量:<input type="number"></p>-->
+                    <!--<p class="grade">每题分数：<input type="number"></p>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="right_bottom clearfix">
+            <div class="level">
+                <p>难易程度：</p>
+                <select name="" id="level">
+                <option value="">请选择</option>
+                <option value="难">难</option>
+                <option value="中">中</option>
+                <option value="易">易<option>
+                </select>
+            </div>
+            <div class="level">
+                <p>班级：</p>
+                <select name="" id="className">
+                    <!--<option value=""></option>-->
+                </select>
+            </div>
+            <div class="level">
+                <p>考试时长：</p>
+                <input type="text" class="time">
+            </div>
+            <div class="level">
+                <p>试卷性质：</p>
+                <select name="" id="nature">
+                    <option value=""></option>
+                    <option value="主考">主考</option>
+                    <option value="补考">补考</option>
+                </select>
+            </div>
+            <div class="circle" id="btn-produce">
+            <p>生成</p>
+        </div>
+            <div class="circle" id="btn-preview">
+                <p>预览</p>
+            </div>
+
+            <p id="btn-download">
+                <a>点击下载 <img src="image/download.png" alt=""></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.2.1%20(2).js"></script>
+<script src="js/index.js"></script>
+<script>
+    $(function () {
+        Index();
+        Logout();
+
+
+
+
+
+
+
+
+
+
+    })
+</script>
+</body>
+</html>

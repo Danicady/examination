@@ -1,0 +1,181 @@
+body{
+    margin: 0px;
+    padding: 0px;
+	overflow: hidden;
+}
+#app{
+    position: relative;
+	width: 100%;
+	height: 1000px;
+
+
+}
+/*第一部分*/
+.bk{
+    width: 68.726%;
+    height: 100%;
+    background-color: #1b1e32;
+    position: relative;
+    float: left;
+	color: #ffffff;
+}
+.login{
+	position: relative;
+	float: left;
+	height: 100%;
+	width: 31.274%;
+}
+#form{
+	position: relative;
+	top: 22%;
+	width: 92%;
+	margin: 0 auto;
+}
+#form h1{
+	font-family: Calibri;
+	font-size: 58px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 5px;
+	letter-spacing: 0px;
+	color: #7c7e7d;
+	text-align: center;
+	margin-bottom: 18%;
+}
+#form p{
+	font-family: Calibri;
+	font-size: 22px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 5px;
+	letter-spacing: 0px;
+	color: #7c7e7d;
+	text-indent: 1em;
+}
+#form .form_input{
+	position: relative;
+	margin:7.5% 1.25em;
+	padding:0.75em 0; 
+	padding-left: 1em;
+	border: 1px solid #3fc899;
+	border-radius: 1px;
+	transition: all 0.4s;
+}
+#form .form_input:hover,#form .form_input:focus,#form .form_input:active{
+	border: 1px solid #CD7173;
+	box-shadow: 0px 0px 1px #7A7D8D;
+}
+#form .form_input input{
+	border: none;
+	text-decoration: none;
+	outline: none;
+	width: 70%;
+}
+#form i{
+	display: block;
+	position: relative;
+	float: left;
+	margin-right: 1.5em;
+	width: 24px;
+	height: 24px;
+}
+#form i:after{
+	content: '';
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	background: url(../image/denglu.svg) no-repeat;
+	background-size: cover;
+}
+#form .i-password:after{
+	background: url(../image/mima.svg) no-repeat;
+	background-size: cover;
+}
+#form .checkbox{
+	margin-left: 1em;
+	font-family: Century;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 5px;
+	letter-spacing: -1px;
+	color: #191919;
+}
+#form .checkbox a{
+	text-decoration: none;
+	font-family: CalifornianFB-Reg;
+	font-size: 17px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 18.5px;
+	letter-spacing: -1px;
+	color: #c0c0c0;
+	position: absolute;
+	right: 10px;
+	transition: all 0.3s ease-in;
+}
+#form .checkbox a:hover,#form .checkbox a:focus{
+	color:#7C97BF;
+}
+#form .btn-lg{
+	width: 82%;
+	height: 59px;
+	border-radius: 5px;
+	border: solid 2px #c4c5cf;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 59px;
+	margin-top: 10%;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+#form .btn-lg:hover,#form .btn-lg:focus{
+	color: #9C9797;
+	border: 2px solid #2C2B2B;
+}
+/*第二部分*/
+.bk .huanyin{
+	position: relative;
+	font-family: CenturySchoolbook;
+	font-size: 62px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 5px;
+	letter-spacing: -4px;
+	color: #ffffff;
+	top: 23%;
+	left: 9%;
+}
+.bk .p_jie{
+	font-family: STLiti;
+	font-size: 35px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: -3px;
+	color: #ffffff;
+	position: relative;
+	width: 42%;
+	top: 40%;
+	left: 37%;
+}
+.bk .p_jie:after{
+	content: '';
+	height: 1px;
+	width: 100%;
+	position: absolute;
+	bottom: -0px;
+	background: #B3A7A8;
+	left: -2%;
+}
+.bk .xuexiao{
+	font-family: CalistoMT;
+	font-size: 18px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 5px;
+	letter-spacing: -1px;
+	color: #ffffff;
+	position: relative;
+	top: 46%;
+	left: 48%;
+}
